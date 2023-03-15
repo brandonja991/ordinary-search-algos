@@ -1,0 +1,55 @@
+{
+  "name": "ordinary/search-algos",
+  "description": "Library for simple and common search algorithms.",
+  "keywords": ["search-algo", "search-algorithms"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Brandon Jackson",
+      "email": "brandonja991@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ordinary/comparator": "^1.0"
+  },
+  "require-dev": {
+    "ordinary/coding-style": "^1.0",
+    "phpunit/phpunit": "^9.6",
+    "vimeo/psalm": "^5.7",
+    "roave/security-advisories": "dev-latest",
+    "psalm/plugin-phpunit": "^0.18",
+    "overtrue/phplint": "^6.1",
+    "captainhook/captainhook": "^5.14",
+    "captainhook/plugin-composer": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ordinary\\SearchAlgos\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ordinary\\SearchAlgos\\": "tests"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "captainhook/plugin-composer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "test": [
+      "@phplint",
+      "@phpcs",
+      "@psalm",
+      "@phpunit"
+    ],
+    "phplint": "vendor/bin/phplint",
+    "phpcs": "vendor/bin/phpcs",
+    "psalm": "vendor/bin/psalm --no-cache --show-info=true",
+    "phpunit": "vendor/bin/phpunit --testsuite=unit --testdox"
+  }
+}
